@@ -1,0 +1,171 @@
+*{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+.wrapper{
+    width: 1080px;
+    margin: auto;
+    position: relative;
+}
+
+.logo {
+ width: 130px;
+ height: 100px;
+ margin-top: 5px;
+ position: relative;
+ left: 0px;
+ top: 5px;
+}
+
+.logo2 {
+width: 100px;
+height: 120px;
+position: relative;
+left: 10px;
+top: 15px;
+}
+
+.menu {
+    float: right;
+    margin: 5px 5px 5px 5px;
+}
+
+nav{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 50px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: #B1BCE6;
+    z-index: 1;
+    border: 2px solid #764AF1;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li{
+    float: left;
+    margin-top: 35px;
+    margin-right: 20px;
+}
+
+nav ul li :hover{
+
+    margin-top: 50px;
+    border-radius: 20px;
+    color:#764AF1;
+}
+
+.home{
+    font-family: 'Arial';
+    color: #764AF1;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+
+.input{
+    font-family: 'Arial';
+    color: #764AF1;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+
+.cari{
+    font-family: 'Arial';
+    color: #764AF1;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+
+nav ul li a{
+    font-family: 'Arial';
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+
+section {
+    margin: auto;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+a.tbl-biru{
+    background: #764AF1;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-biru:hover{
+    background: #2C93CD;
+    text-decoration: none;
+}
+
+.keyword{
+    width: 80px;
+    font-size: 16px;
+
+}
+
+.tabsearch{
+    position: relative;
+    left: 150px;
+}
+
+h1{
+
+    padding-top: 20px;
+}
+
+.btn-group .button {
+    background-color: #4CAF50;
+    border: 1px solid green;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+}
+  
+.btn-group .button:not(:last-child) {
+    border-right: none;
+}
+  
+.btn-group .button:hover {
+    background-color: #3e8e41;
+}

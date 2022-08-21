@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Input Formulir Asesmen</title>
+    <link rel="stylesheet" href="input.css">
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <img src="logo.png" class="logo">
+            <img src="logo2.png" class="logo2">
+            <div class="menu">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="input.php"class="input">Input</a></li>
+                    <li><a href="pencarian.php">Pencarian</a></li>
+                    <li><a href="index.php"class="tbl-biru">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="regform"><h2>INPUT FORMULIR ASESMEN AWAL</h2></div>
+    <div class="main5"><h1>Status Kesehatan Calon PPKS</h1>
+        <form action="" method="POST">
+            <table>
+                <tr>
+                    <td class="nama">Penyakit yang diderita saat ini?</td>
+                    <td><input type="radio" id="1" name="Penyakit yang diderita saat ini" value="1" onclick="c()"><label  for="tidak ada">Tidak Ada</label>
+                        <input type="radio" id="2" name="Penyakit yang diderita saat ini" value="2" onclick="c()"><label  for="ada">Ada</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">Penyakit yang pernah diderita</td>
+                    <td><input type="text"  class="field"></td>
+                </tr>
+                <tr>
+                    <td class="nama">Langkah Pengobatan/pelayanan<br/>kesehatan yang diterima</td>
+                    <td><input type="text" class="field"></td>
+                </tr>
+                <tr>
+                    <td class="nama">Obat yang sedang dikonsumsi</td>
+                    <td><input type="radio" id="1" name="Obat yang sedang dikonsumsi" value="1" onclick="c()"><label  for="tidak ada">Tidak Ada</label><br>
+                        <input type="radio" id="2" name="Obat yang sedang dikonsumsi" value="2" onclick="c()"><label  for="ada">Ada</label>
+                        <input type="number" placeholder="Jenis" class="field2">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">Pernah dirawat diRumah Sakit<br/>/Layanan kesehatan lain?</td>
+                    <td><input type="radio" id="1" name="Pernah dirawat diRumah Sakit" value="2" onclick="c()"><label  for="ya">Ya</label>
+                        <input type="radio" id="1" name="Pernah dirawat diRumah Sakit" value="1" onclick="c()"><label  for="tidak">Tidak</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">Berapa lama dirawat?<br/>(Jika Pernah Dirawat)</td>
+                    <td><input type="number" class="field2"><td class="bulan">)*bulan</td>
+                </td>
+                </tr>
+                <tr>
+                    <td class="nama">Apakah kecanduan Narkotika<br/>/Alkohol?</td>
+                    <td><input type="radio" id="1" name="Apakah kecanduan Narkotika" value="2" onclick="c()"><label  for="ya">Ya</label>
+                        <input type="radio" id="1" name="Apakah kecanduan Narkotika" value="1" onclick="c()"><label  for="tidak">Tidak</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">Apakah keadaan disabilitas<br/>saat ini masih membutuhkan<br/>operasi/pengobatan lanjutan?</td>
+                    <td><input type="radio" id="1" name="Apakah keadaan disabilitas" value="2" onclick="c()"><label  for="ya">Ya</label>
+                        <input type="radio" id="1" name="Apakah keadaan disabilitas" value="1" onclick="c()"><label  for="tidak">Tidak</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">Masalah kesehatan dalam<br/>keluarga (Riwayat Kesehatan)</td>
+                    <td><input type="text" class="field"></td>
+                </tr>
+                <tr>
+                    <td class="nama">Adakah bukti tentang masalah<br/>kesehatan jiwa seperti depresi,<br/>gelisah, gangguan kognitif,epilepsi?</td>
+                    <td><input type="radio" id="1" name="Adakah bukti tentang masalah" value="2" onclick="c()"><label  for="ya">Ya</label>
+                        <input type="radio" id="1" name="Adakah bukti tentang masalah" value="1" onclick="c()"><label  for="tidak">Tidak</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">Apakah pernah mengalami trauma,<br/>kekerasan, dan penganiayaan?</td>
+                    <td><input type="radio" id="1" name="Apakah pernah mengalami trauma" value="2" onclick="c()"><label  for="ya">Ya</label>
+                        <input type="radio" id="1" name="Apakah pernah mengalami trauma" value="1" onclick="c()"><label  for="tidak">Tidak</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">RESPON DARURAT</td>
+                </tr>
+                <tr>
+                    <td class="nama">Penyelamatan</td>
+                    <td><input type="checkbox" class="checkbox">
+                        <input type="text" class="field3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">Medis</td>
+                    <td><input type="checkbox" class="checkbox">
+                        <input type="text" class="field3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">Psikososial</td>
+                    <td><input type="checkbox" class="checkbox">
+                        <input type="text" class="field3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">Kebutuhan yang diinginkan/<br/>yang segera dipenuhi?</td>
+                    <td class="select"><select class="select2">
+                        <option>Pemenuhan Hidup Layak</option>
+                        <option>Perawatan Sosial/Pengasuhan</option>
+                        <option>Dukungan Keluarga</option>
+                        <option>Terapi Fisik</option>
+                        <option>Pelatihan Vokasional/Kewirausahaan</option>
+                        <option>Bantuan Sosial dan Atensi Sosial</option>
+                        <option>Alat Bantu</option>
+                    </select></td>
+                </tr>
+                <tr>
+                </table>
+            </form>
+    <div class="main6"><h1>POTENSI SUMBER KESEJAHTERAAN SOSIAL</h1>
+        <form action="" method="POST">
+            <table>
+                <tr>
+                    <td class="nama">INTERNAL</td>
+                    <td><input type="checkbox">Diri Sendiri<br/>
+                        <textarea rows="5" class="field4"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="checkbox2"><label  for="keluarga" class="label">Keluarga</label>
+                        <textarea rows="5" class="field5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">EKSTERNAL</td>
+                    <td><input type="checkbox">Masyarakat<br/>
+                        <textarea rows="5" class="field4"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="checkbox2"><label  for="kelembagaan" class="label">Kelembagaan</label>
+                        <textarea rows="5" class="field5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="nama">Analisis Pekerja Sosial</td>
+                    <td><textarea rows="5" id="analisispeksos" class="field"></textarea></td>
+                </tr>
+                </table>
+                </form>
+
+<h2>Silahkan pilih file untuk unggah foto identitas calon PPKS:</h2>
+<form action="" method="POST"enctype="multipart/form-data">
+  <li  style="border: 1px solid black; border-radius: 20px;" ><label for="myfile">Pilih gambar (jpg):</label>
+  <input type="file" id="myfile" name="myfile">
+  <input type="submit" value="Unggah" name="unggah" style="border-radius: 20px; border: none; margin-top: 0px; margin-bottom:20px; margin-left: 600px; background: #764AF1;
+    color: #FFFFFF; width:75px; height:40px; font-size:16px; font-weight: bold;" onclick="unggah()">
+  </li>
+</form>
+    
+</body>
+</html>
