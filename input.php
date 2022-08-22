@@ -105,7 +105,7 @@
             </tr>
             <tr>
                 <td class="nama">Pendnameikan Terakhir</td>
-                <td><input type="text"  name="pendnameikan_terakhir" class="field"></td>
+                <td><input type="text"  name="pendidikan_terakhir" class="field"></td>
             </tr>
             <tr>
                 <td class="nama">Program Rehabilitasi<br/>/Pelatihan yang <br/>pernah diikuti</td>
@@ -309,7 +309,7 @@
                 </tr>
                 <tr>
                     <td class="nama">Penyakit yang dnameerita saat ini?</td>
-                    <td class="select"><select name="penyakit_dnameerita" class="select2">
+                    <td class="select"><select name="penyakit_diderita" class="select2">
                         <option>Pilih disini</option>
                         <option value="Tidak Ada">Tidak Ada</option>
                         <option value="Ada">Ada</option>
@@ -317,7 +317,7 @@
                 </tr>
                 <tr>
                     <td class="nama">Penyakit yang pernah dnameerita</td>
-                    <td><input type="text" name="penyakit_pernah_dnameerita" class="field"></td>
+                    <td><input type="text" name="penyakit_pernah_diderita" class="field"></td>
                 </tr>
                 <tr>
                     <td class="nama">Langkah Pengobatan/pelayanan<br/>kesehatan yang diterima</td>
