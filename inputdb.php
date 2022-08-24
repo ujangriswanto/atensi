@@ -84,13 +84,7 @@ if(isset($_POST['submit'])){
         $con->exec($data);
         echo "<script>alert('Berhasil Simpan Data!');
         document.location.href='input.php'</script>\n";
-        // echo json_encode($data);
-        // if($con->exec($data)){
-        //     echo "<script>alert('Berhasil Simpan Data!');
-        //     document.location.href='src/final.php'</script>\n";
-        // } else {
-        //     echo "Unable to create record";
-        // }
+        echo json_encode($data);
     }catch(PDOException $e){
         echo $data . "<br>" . $e->getMessage();
     }

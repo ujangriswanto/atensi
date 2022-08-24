@@ -110,7 +110,6 @@ if(isset($_GET['hapus'])){
                         <td><?php echo $data['tempat_lahir'];?></td>
                         <td>
                             <div class="btn-group">
-                                <button class="button">unduh</button>
                                 <a  class="button" href="pencarian.php?hapus=<?php echo $data['NIK']; ?>">hapus</a>
                             </div>
                         </td>
