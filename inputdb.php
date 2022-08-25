@@ -82,19 +82,19 @@ if(isset($_POST['submit'])){
         $hasil = "keluarga";
     } else if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Ya") {
         $hasil = "residensial";
-    } else if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Tidak" && $penyakit_pernah_diderita = "Ada") {
+    } else if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Tidak" && $penyakit_diderita = "Ada") {
         $hasil = "komunitas";
-    } else if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Tidak" && $penyakit_pernah_diderita = "Tidak Ada") {
+    } else if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Tidak" && $penyakit_diderita = "Tidak Ada") {
         $hasil = "residensial";
     } else if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Kacamata Low Vision") {
         $hasil = "residensial";
-    } else if ($kapan_alami_disabilitas = "Sejak Lahir" && $gangguan_kesehatan = "Ya") {
+    } else if ($kapan_alami_disabilitas = "Sejak Lahir" && $bukti_gangguan = "Ya") {
         $hasil = "komunitas";
-    } else if ($kapan_alami_disabilitas = "Sejak Lahir" && $gangguan_kesehatan = "Tidak" && $jenis_disabilitas = "Totality Blind" && $jenis_kelamin = "Laki-laki") {
+    } else if ($kapan_alami_disabilitas = "Sejak Lahir" && $bukti_gangguan = "Tidak" && $jenis_disabilitas = "Totality Blind" && $jenis_kelamin = "Laki-laki") {
         $hasil = "keluarga";
-    } else if ($kapan_alami_disabilitas = "Sejak Lahir" && $gangguan_kesehatan = "Tidak" && $jenis_disabilitas = "Totality Blind" && $jenis_kelamin = "Perempuan") {
+    } else if ($kapan_alami_disabilitas = "Sejak Lahir" && $bukti_gangguan = "Tidak" && $jenis_disabilitas = "Totality Blind" && $jenis_kelamin = "Perempuan") {
         $hasil = "komunitas";
-    } else if ($kapan_alami_disabilitas = "Sejak Lahir" && $gangguan_kesehatan = "Tidak" && $jenis_disabilitas = "Low Vision") {
+    } else if ($kapan_alami_disabilitas = "Sejak Lahir" && $bukti_gangguan = "Tidak" && $jenis_disabilitas = "Low Vision") {
         $hasil = "residensial";
     } else if ($kapan_alami_disabilitas = "Kecelakaan" && $obat_yang_dikonsumsi = "Ada") {
         $hasil = "residensial";
