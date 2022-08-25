@@ -49,8 +49,8 @@ function login_db()
 
 function simpandata()
 {
-    var DecisionTree = require('decision-tree');
-    var training_data = [
+    let DecisionTree = require('node_modules/decision-tree/lib/decision-tree');
+    let training_data = [
         {
           "Jenis Kelamin": "P",
           "Jenis Disabilitas": "Totality Blind",

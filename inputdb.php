@@ -78,13 +78,37 @@ if(isset($_POST['submit'])){
     $kelembagaan = $_POST['kelembagaan'];
     $analisis_peksos = $_POST['analisis_peksos'];
 
+    if ($penyebab_disabilitas = "penyakit" && $alat_bantu = "tidak ada") {
+        $hasil = "keluarga";
+    } else if ($penyebab_disabilitas = "penyakit" && $alat_bantu = "tongkat" && $pernah_trauma = "ya") {
+        $hasil = "residensial";
+    } else if ($penyebab_disabilitas = "penyakit" && $alat_bantu = "tongkat" && $pernah_trauma = "tidak" && $penyakit_yang_diderita = "ada") {
+        $hasil = "komunitas";
+    } else if ($penyebab_disabilitas = "penyakit" && $alat_bantu = "tongkat" && $pernah_trauma = "tidak" && $penyakit_yang_diderita = "tidak ada") {
+        $hasil = "residensial";
+    } else if ($penyebab_disabilitas = "penyakit" && $alat_bantu = "kacamata") {
+        $hasil = "residensial";
+    } else if ($penyebab_disabilitas = "sejak lahir" && $gangguan_kesehatan = "ya") {
+        $hasil = "komunitas";
+    } else if ($penyebab_disabilitas = "sejak lahir" && $gangguan_kesehatan = "tidak" && $jenis_disabilitas = "totality blind" && $jenis_kelamin = "laki-laki") {
+        $hasil = "keluarga";
+    } else if ($penyebab_disabilitas = "sejak lahir" && $gangguan_kesehatan = "tidak" && $jenis_disabilitas = "totality blind" && $jenis_kelamin = "perempuan") {
+        $hasil = "komunitas";
+    } else if ($penyebab_disabilitas = "sejak lahir" && $gangguan_kesehatan = "tidak" && $jenis_disabilitas = "low vision") {
+        $hasil = "residensial";
+    } else if ($penyebab_disabilitas = "kecelakaan" && $obat_yang_dikonsumsi = "ada") {
+        $hasil = "residensial";
+    } else if ($penyebab_disabilitas = "kecelakaan" && $obat_yang_dikonsumsi = "tidak ada") {
+        $hasil = "komunitas";
+    }
+
     try{
-        $data = "INSERT INTO tb_ppks (nama_lengkap, nama_panggilan, NIK, no_kk, jenis_kelamin, usia, tempat_lahir, tanggal_lahir, alamat, agama, anak_ke, jumlah_saudara, status_pernikahan, pekerjaan, jaminan_sosial, no_kartu, no_hp, pendidikan_terakhir, program_rehabilitasi, penyelenggara, nama_ayah, alamat_ayah, pekerjaan_ayah, penghasilan_ayah, no_hp_ayah, st_hidup_ayah, agama_ayah, nama_ibu, alamat_ibu, pekerjaan_ibu, penghasilan_ibu, no_hp_ibu, st_hidup_ibu, agama_ibu, nama_wali, alamat_wali, pekerjaan_wali, penghasilan_wali, no_hp_wali, agama_wali, hubungan_dengan_pm, nama_keluarga, alamat_keluarga, pekerjaan_keluarga, penghasilan_keluarga, no_hp_keluarga, st_hidup_keluarga, agama_keluarga, jumlah_tanggungan, jenis_disabilitas, alat_bantu, kemampuan_dasar, kapan_alami_disabilitas, penyakit_diderita, penyakit_pernah_diderita, langkah_pengobatan, obat_yang_dikonsumsi, jumlah_obat, pernah_dirawat, lama_dirawat, kecanduan_narkotika, keadaan_disabilitas, riwayat_kesehatan, bukti_gangguan, pernah_trauma, penyelamatan, medis, psikososial, kebutuhan_diinginkan, diri_sendiri, keluarga, masyarakat, kelembagaan, analisis_peksos) VALUES ('$nama_lengkap', '$nama_panggilan','$NIK','$no_kk','$jenis_kelamin','$usia','$tempat_lahir','$tanggal_lahir','$alamat','$agama','$anak_ke','$jumlah_saudara','$status_pernikahan','$pekerjaan','$jaminan_sosial','$no_kartu','$no_hp','$pendidikan_terakhir','$program_rehabilitasi','$penyelenggara', '$nama_ayah', '$alamat_ayah', '$pekerjaan_ayah', '$penghasilan_ayah', '$no_hp_ayah', '$st_hidup_ayah', '$agama_ayah', '$nama_ibu', '$alamat_ibu', '$pekerjaan_ibu', '$penghasilan_ibu', '$no_hp_ibu', '$st_hidup_ibu', '$agama_ibu', '$nama_wali', '$alamat_wali', '$pekerjaan_wali', '$penghasilan_wali', '$no_hp_wali', '$agama_wali', '$hubungan_dengan_pm', '$nama_keluarga', '$alamat_keluarga', '$pekerjaan_keluarga', '$penghasilan_keluarga', '$no_hp_keluarga', '$st_hidup_keluarga', '$agama_keluarga', '$jumlah_tanggungan', '$jenis_disabilitas', '$alat_bantu', '$kemampuan_dasar', '$kapan_alami_disabilitas', '$penyakit_diderita', '$penyakit_pernah_diderita', '$langkah_pengobatan', '$obat_yang_dikonsumsi', '$jumlah_obat', '$pernah_dirawat', '$lama_dirawat', '$kecanduan_narkotika', '$keadaan_disabilitas', '$riwayat_kesehatan', '$bukti_gangguan', '$pernah_trauma', '$penyelamatan', '$medis', '$psikososial', '$kebutuhan_diinginkan', '$diri_sendiri', '$keluarga', '$masyarakat', '$kelembagaan', '$analisis_peksos')";
+        $data = "INSERT INTO tb_ppks (nama_lengkap, nama_panggilan, NIK, no_kk, jenis_kelamin, usia, tempat_lahir, tanggal_lahir, alamat, agama, anak_ke, jumlah_saudara, status_pernikahan, pekerjaan, jaminan_sosial, no_kartu, no_hp, pendidikan_terakhir, program_rehabilitasi, penyelenggara, nama_ayah, alamat_ayah, pekerjaan_ayah, penghasilan_ayah, no_hp_ayah, st_hidup_ayah, agama_ayah, nama_ibu, alamat_ibu, pekerjaan_ibu, penghasilan_ibu, no_hp_ibu, st_hidup_ibu, agama_ibu, nama_wali, alamat_wali, pekerjaan_wali, penghasilan_wali, no_hp_wali, agama_wali, hubungan_dengan_pm, nama_keluarga, alamat_keluarga, pekerjaan_keluarga, penghasilan_keluarga, no_hp_keluarga, st_hidup_keluarga, agama_keluarga, jumlah_tanggungan, jenis_disabilitas, alat_bantu, kemampuan_dasar, kapan_alami_disabilitas, penyakit_diderita, penyakit_pernah_diderita, langkah_pengobatan, obat_yang_dikonsumsi, jumlah_obat, pernah_dirawat, lama_dirawat, kecanduan_narkotika, keadaan_disabilitas, riwayat_kesehatan, bukti_gangguan, pernah_trauma, penyelamatan, medis, psikososial, kebutuhan_diinginkan, diri_sendiri, keluarga, masyarakat, kelembagaan, analisis_peksos, hasil) VALUES ('$nama_lengkap', '$nama_panggilan','$NIK','$no_kk','$jenis_kelamin','$usia','$tempat_lahir','$tanggal_lahir','$alamat','$agama','$anak_ke','$jumlah_saudara','$status_pernikahan','$pekerjaan','$jaminan_sosial','$no_kartu','$no_hp','$pendidikan_terakhir','$program_rehabilitasi','$penyelenggara', '$nama_ayah', '$alamat_ayah', '$pekerjaan_ayah', '$penghasilan_ayah', '$no_hp_ayah', '$st_hidup_ayah', '$agama_ayah', '$nama_ibu', '$alamat_ibu', '$pekerjaan_ibu', '$penghasilan_ibu', '$no_hp_ibu', '$st_hidup_ibu', '$agama_ibu', '$nama_wali', '$alamat_wali', '$pekerjaan_wali', '$penghasilan_wali', '$no_hp_wali', '$agama_wali', '$hubungan_dengan_pm', '$nama_keluarga', '$alamat_keluarga', '$pekerjaan_keluarga', '$penghasilan_keluarga', '$no_hp_keluarga', '$st_hidup_keluarga', '$agama_keluarga', '$jumlah_tanggungan', '$jenis_disabilitas', '$alat_bantu', '$kemampuan_dasar', '$kapan_alami_disabilitas', '$penyakit_diderita', '$penyakit_pernah_diderita', '$langkah_pengobatan', '$obat_yang_dikonsumsi', '$jumlah_obat', '$pernah_dirawat', '$lama_dirawat', '$kecanduan_narkotika', '$keadaan_disabilitas', '$riwayat_kesehatan', '$bukti_gangguan', '$pernah_trauma', '$penyelamatan', '$medis', '$psikososial', '$kebutuhan_diinginkan', '$diri_sendiri', '$keluarga', '$masyarakat', '$kelembagaan', '$analisis_peksos', '$hasil')";
 
         $con->exec($data);
         echo "<script>alert('Berhasil Simpan Data!');
         document.location.href='input.php'</script>\n";
-        echo json_encode($data);
+        //echo json_encode($data);
     }catch(PDOException $e){
         echo $data . "<br>" . $e->getMessage();
     }
