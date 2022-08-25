@@ -78,27 +78,27 @@ if(isset($_POST['submit'])){
     $kelembagaan = $_POST['kelembagaan'];
     $analisis_peksos = $_POST['analisis_peksos'];
 
-    if ($penyebab_disabilitas = "Penyakit" && $alat_bantu = "Tidak ada") {
+    if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tidak ada") {
         $hasil = "keluarga";
-    } else if ($penyebab_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Ya") {
+    } else if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Ya") {
         $hasil = "residensial";
-    } else if ($penyebab_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Tidak" && $penyakit_yang_diderita = "Ada") {
+    } else if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Tidak" && $penyakit_pernah_diderita = "Ada") {
         $hasil = "komunitas";
-    } else if ($penyebab_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Tidak" && $penyakit_yang_diderita = "Tidak ada") {
+    } else if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Tidak" && $penyakit_pernah_diderita = "Tidak ada") {
         $hasil = "residensial";
-    } else if ($penyebab_disabilitas = "Penyakit" && $alat_bantu = "Kacamata") {
+    } else if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Kacamata") {
         $hasil = "residensial";
-    } else if ($penyebab_disabilitas = "Sejak lahir" && $gangguan_kesehatan = "Ya") {
+    } else if ($kapan_alami_disabilitas = "Sejak lahir" && $gangguan_kesehatan = "Ya") {
         $hasil = "komunitas";
-    } else if ($penyebab_disabilitas = "Sejak lahir" && $gangguan_kesehatan = "Tidak" && $jenis_disabilitas = "Totality blind" && $jenis_kelamin = "Laki-laki") {
+    } else if ($kapan_alami_disabilitas = "Sejak lahir" && $gangguan_kesehatan = "Tidak" && $jenis_disabilitas = "Totality blind" && $jenis_kelamin = "Laki-laki") {
         $hasil = "keluarga";
-    } else if ($penyebab_disabilitas = "Sejak lahir" && $gangguan_kesehatan = "Tidak" && $jenis_disabilitas = "Totality blind" && $jenis_kelamin = "Perempuan") {
+    } else if ($kapan_alami_disabilitas = "Sejak lahir" && $gangguan_kesehatan = "Tidak" && $jenis_disabilitas = "Totality blind" && $jenis_kelamin = "Perempuan") {
         $hasil = "komunitas";
-    } else if ($penyebab_disabilitas = "Sejak lahir" && $gangguan_kesehatan = "Tidak" && $jenis_disabilitas = "Low vision") {
+    } else if ($kapan_alami_disabilitas = "Sejak lahir" && $gangguan_kesehatan = "Tidak" && $jenis_disabilitas = "Low vision") {
         $hasil = "residensial";
-    } else if ($penyebab_disabilitas = "Kecelakaan" && $obat_yang_dikonsumsi = "Ada") {
+    } else if ($kapan_alami_disabilitas = "Kecelakaan" && $obat_yang_dikonsumsi = "Ada") {
         $hasil = "residensial";
-    } else if ($penyebab_disabilitas = "Kecelakaan" && $obat_yang_dikonsumsi = "Tidak ada") {
+    } else if ($kapan_alami_disabilitas = "Kecelakaan" && $obat_yang_dikonsumsi = "Tidak ada") {
         $hasil = "komunitas";
     }
 
