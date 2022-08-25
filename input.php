@@ -104,7 +104,7 @@
                 <td><input type="tel" name="no_hp" class="field"></td>
             </tr>
             <tr>
-                <td class="nama">Pendnameikan Terakhir</td>
+                <td class="nama">Pendidikan Terakhir</td>
                 <td><input type="text"  name="pendidikan_terakhir" class="field"></td>
             </tr>
             <tr>
@@ -308,7 +308,7 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td class="nama">Penyakit yang dnameerita saat ini?</td>
+                    <td class="nama">Penyakit yang diderita saat ini?</td>
                     <td class="select"><select name="penyakit_diderita" class="select2">
                         <option>Pilih disini</option>
                         <option value="Tidak Ada">Tidak Ada</option>
@@ -316,7 +316,7 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td class="nama">Penyakit yang pernah dnameerita</td>
+                    <td class="nama">Penyakit yang pernah diderita</td>
                     <td><input type="text" name="penyakit_pernah_diderita" class="field"></td>
                 </tr>
                 <tr>
@@ -406,7 +406,7 @@
                 <tr>
                     <td class="select" style="position: relative; left: 300px;"><select name="kebutuhan_diinginkan" class="select2">
                         <option>Pilih kebutuhan</option>
-                        <option value="Pemenuhan Hnameup Layak">Pemenuhan Hnameup Layak</option>
+                        <option value="Pemenuhan Hidup Layak">Pemenuhan Hnameup Layak</option>
                         <option value="Perawatan Sosial/Pengasuhan">Perawatan Sosial/Pengasuhan</option>
                         <option value="Dukungan Keluarga">Dukungan Keluarga</option>
                         <option value="Terapi Fisik">Terapi Fisik</option>
