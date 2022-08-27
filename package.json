@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "decision-tree": "^0.3.7",
+    "jquery": "^3.6.1",
     "sweetalert2": "^11.4.29"
   }
 }

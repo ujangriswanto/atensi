@@ -131,6 +131,7 @@ if(isset($_GET['hapus'])){
         
     </table>
 
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 </body>
