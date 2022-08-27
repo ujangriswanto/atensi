@@ -77,28 +77,28 @@ if(isset($_POST['submit'])){
     $kelembagaan = $_POST['kelembagaan'];
     $analisis_peksos = $_POST['analisis_peksos'];
 
-    if ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tidak Ada") {
+    if ($kapan_alami_disabilitas == "Penyakit" && $alat_bantu == "Tidak Ada") {
         $hasil = "keluarga";
         echo "<script></script>";
-    } elseif ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Ya") {
+    } elseif ($kapan_alami_disabilitas == "Penyakit" && $alat_bantu == "Tongkat" && $pernah_trauma == "Ya") {
         $hasil = "residensial";
-    } elseif ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Tidak" && $penyakit_diderita = "Ada") {
+    } elseif ($kapan_alami_disabilitas == "Penyakit" && $alat_bantu == "Tongkat" && $pernah_trauma == "Tidak" && $penyakit_diderita == "Ada") {
         $hasil = "komunitas";
-    } elseif ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Tongkat" && $pernah_trauma = "Tidak" && $penyakit_diderita = "Tidak Ada") {
+    } elseif ($kapan_alami_disabilitas == "Penyakit" && $alat_bantu == "Tongkat" && $pernah_trauma == "Tidak" && $penyakit_diderita == "Tidak Ada") {
         $hasil = "residensial";
-    } elseif ($kapan_alami_disabilitas = "Penyakit" && $alat_bantu = "Kacamata Low Vision") {
+    } elseif ($kapan_alami_disabilitas == "Penyakit" && $alat_bantu == "Kacamata Low Vision") {
         $hasil = "residensial";
-    } elseif ($kapan_alami_disabilitas = "Sejak Lahir" && $bukti_gangguan = "Ya") {
+    } elseif ($kapan_alami_disabilitas == "Sejak Lahir" && $bukti_gangguan == "Ya") {
         $hasil = "komunitas";
-    } elseif ($kapan_alami_disabilitas = "Sejak Lahir" && $bukti_gangguan = "Tidak" && $jenis_disabilitas = "Totality Blind" && $jenis_kelamin = "Laki-laki") {
+    } elseif ($kapan_alami_disabilitas == "Sejak Lahir" && $bukti_gangguan == "Tidak" && $jenis_disabilitas == "Totality Blind" && $jenis_kelamin == "Laki-laki") {
         $hasil = "keluarga";
-    } elseif ($kapan_alami_disabilitas = "Sejak Lahir" && $bukti_gangguan = "Tidak" && $jenis_disabilitas = "Totality Blind" && $jenis_kelamin = "Perempuan") {
+    } elseif ($kapan_alami_disabilitas == "Sejak Lahir" && $bukti_gangguan == "Tidak" && $jenis_disabilitas == "Totality Blind" && $jenis_kelamin == "Perempuan") {
         $hasil = "komunitas";
-    } elseif ($kapan_alami_disabilitas = "Sejak Lahir" && $bukti_gangguan = "Tidak" && $jenis_disabilitas = "Low Vision") {
+    } elseif ($kapan_alami_disabilitas == "Sejak Lahir" && $bukti_gangguan == "Tidak" && $jenis_disabilitas == "Low Vision") {
         $hasil = "residensial";
-    } elseif ($kapan_alami_disabilitas = "Kecelakaan" && $obat_yang_dikonsumsi = "Ada") {
+    } elseif ($kapan_alami_disabilitas == "Kecelakaan" && $obat_yang_dikonsumsi == "Ada") {
         $hasil = "residensial";
-    } elseif ($kapan_alami_disabilitas = "Kecelakaan" && $obat_yang_dikonsumsi = "Tidak Ada") {
+    } elseif ($kapan_alami_disabilitas == "Kecelakaan" && $obat_yang_dikonsumsi == "Tidak Ada") {
         $hasil = "komunitas";
     }
     
@@ -106,11 +106,10 @@ if(isset($_POST['submit'])){
         $data = "INSERT INTO tb_ppks (nama_lengkap, nama_panggilan, NIK, no_kk, jenis_kelamin, usia, tempat_lahir, tanggal_lahir, alamat, agama, anak_ke, jumlah_saudara, status_pernikahan, pekerjaan, jaminan_sosial, no_kartu, no_hp, pendidikan_terakhir, program_rehabilitasi, penyelenggara, nama_ayah, alamat_ayah, pekerjaan_ayah, penghasilan_ayah, no_hp_ayah, st_hidup_ayah, agama_ayah, nama_ibu, alamat_ibu, pekerjaan_ibu, penghasilan_ibu, no_hp_ibu, st_hidup_ibu, agama_ibu, nama_wali, alamat_wali, pekerjaan_wali, penghasilan_wali, no_hp_wali, agama_wali, hubungan_dengan_pm, nama_keluarga, alamat_keluarga, pekerjaan_keluarga, penghasilan_keluarga, no_hp_keluarga, st_hidup_keluarga, agama_keluarga, jumlah_tanggungan, jenis_disabilitas, alat_bantu, kemampuan_dasar, kapan_alami_disabilitas, penyakit_diderita, penyakit_pernah_diderita, langkah_pengobatan, obat_yang_dikonsumsi, jumlah_obat, pernah_dirawat, lama_dirawat, kecanduan_narkotika, keadaan_disabilitas, riwayat_kesehatan, bukti_gangguan, pernah_trauma, penyelamatan, medis, psikososial, kebutuhan_diinginkan, diri_sendiri, keluarga, masyarakat, kelembagaan, analisis_peksos, hasil) VALUES ('$nama_lengkap', '$nama_panggilan','$NIK','$no_kk','$jenis_kelamin','$usia','$tempat_lahir','$tanggal_lahir','$alamat','$agama','$anak_ke','$jumlah_saudara','$status_pernikahan','$pekerjaan','$jaminan_sosial','$no_kartu','$no_hp','$pendidikan_terakhir','$program_rehabilitasi','$penyelenggara', '$nama_ayah', '$alamat_ayah', '$pekerjaan_ayah', '$penghasilan_ayah', '$no_hp_ayah', '$st_hidup_ayah', '$agama_ayah', '$nama_ibu', '$alamat_ibu', '$pekerjaan_ibu', '$penghasilan_ibu', '$no_hp_ibu', '$st_hidup_ibu', '$agama_ibu', '$nama_wali', '$alamat_wali', '$pekerjaan_wali', '$penghasilan_wali', '$no_hp_wali', '$agama_wali', '$hubungan_dengan_pm', '$nama_keluarga', '$alamat_keluarga', '$pekerjaan_keluarga', '$penghasilan_keluarga', '$no_hp_keluarga', '$st_hidup_keluarga', '$agama_keluarga', '$jumlah_tanggungan', '$jenis_disabilitas', '$alat_bantu', '$kemampuan_dasar', '$kapan_alami_disabilitas', '$penyakit_diderita', '$penyakit_pernah_diderita', '$langkah_pengobatan', '$obat_yang_dikonsumsi', '$jumlah_obat', '$pernah_dirawat', '$lama_dirawat', '$kecanduan_narkotika', '$keadaan_disabilitas', '$riwayat_kesehatan', '$bukti_gangguan', '$pernah_trauma', '$penyelamatan', '$medis', '$psikososial', '$kebutuhan_diinginkan', '$diri_sendiri', '$keluarga', '$masyarakat', '$kelembagaan', '$analisis_peksos', '$hasil')";
 
         $con->exec($data);
-        echo "<script>swal('Selamat!', 'Data Berhasil Disimpan!', 'success');
-        document.location.href='input.php'</script>\n";
+        echo "<script>Swal.fire('Selamat!', 'Data Berhasil Disimpan!', 'success')</script>";
+        echo "<script>document.location.href='input.php'</script>";
     }catch(PDOException $e){
         echo $data . "<br>" . $e->getMessage();
     }
     $con = null;
 }
-?>

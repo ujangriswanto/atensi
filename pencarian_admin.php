@@ -10,17 +10,31 @@ if(isset($_POST['cari']))
         $stmt = $con->prepare("SELECT * from tb_ppks where NIK like '%$search%'");
         $stmt->execute();
         $calonppks_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo "<script>swal ('Hore!', 'Data ditemukan!', 'success');</script>";
+        echo "<script>Swal.fire('Hore!', 'Data ditemukan!', 'success')</script>";
     }
     else
     {
         $searchErr = "NIK tidak tersedia";
-        echo "<script>swal ('Yahh!', 'NIK tidak ditemukan!', 'warning');</script>";
+        echo "<script>Swal.fire('Yahh!', 'NIK tidak ditemukan!', 'warning')</script>";
     }
     
 }
 if(isset($_GET['hapus'])){
     $NIK = $_GET['hapus'];
+    echo "<script>Swal.fire{
+        title: 'Apa Anda Yakin?',
+        text: 'Data yang telah dihapus tidak dapat dikembalikan!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus'
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire('Hore!', 'Data telah terhapus!', 'success')
+        } 
+      })</script>";
     try{
         $conn = new PDO("mysql:host=$servername;dbname=db_asessmen", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -28,22 +42,7 @@ if(isset($_GET['hapus'])){
         $sql = "DELETE FROM tb_ppks WHERE NIK = $NIK";
 
         $conn->exec($sql);
-        echo "<script>swal({
-            title: 'Apa Anda Yakin?',
-            text: 'Data yang telah dihapus tidak dapat dikembalikan!',
-            icon: 'warning',
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-              swal('Hore! Data telah terhapus!', {
-                icon: 'success',
-              });
-            } else {
-              swal('Data aman tidak dihapus!');
-            }
-          });</script>";
+        
         header("location: pencarian.php");
     } catch (PDOException $e){
         echo $sql . "<br>" . $e->getMessage();
@@ -55,7 +54,11 @@ if(isset($_GET['hapus'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cari data PPKS</title>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="cari.css">
 </head>
 <body>
@@ -129,7 +132,7 @@ if(isset($_GET['hapus'])){
         
     </table>
 
-
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 </body>
 </html>

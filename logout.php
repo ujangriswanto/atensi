@@ -1,7 +1,6 @@
 <?php 
  
-session_start();
-if(session_destroy()){
+if(session_start()){
     echo "<script>swal({
         title: 'Apa Anda Yakin?',
         text: 'Mau keluar dari aplikasi ini?',
@@ -9,6 +8,8 @@ if(session_destroy()){
         buttons: ['Batal', 'Yakin'],
       });</script>";
 };
+
+session_destroy();
  
 header("Location: index.php");
  
