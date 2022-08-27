@@ -473,8 +473,9 @@ session_start();
         </script>
     <?php unset($_SESSION['sukses']);}?>
 
-    <script src="jquery.js"></script>
     <script src="script.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 

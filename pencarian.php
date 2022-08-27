@@ -1,24 +1,18 @@
 <?php
 include 'caridb.php';
-$searchErr = '';
 $calonppks_details='';
-if(isset($_POST['cari']))
-{
-    if(!empty($_POST['keyword']))
-    {
+if(isset($_POST['cari'])){
+    if(!empty($_POST['keyword'])){
         $search = $_POST['keyword'];
         $stmt = $con->prepare("SELECT * from tb_ppks where NIK like '%$search%'");
         $stmt->execute();
         $calonppks_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo "<script>Swal.fire('Hore!', 'Data ditemukan!', 'success')</script>";
-    }
-    else
-    {
-        $searchErr = "NIK tidak tersedia";
+    } else {
         echo "<script>Swal.fire('Yahh!', 'NIK tidak ditemukan!', 'warning')</script>";
     }
-    
 }
+
 if(isset($_GET['hapus'])){
     $NIK = $_GET['hapus'];
     echo "<script>Swal.fire({
@@ -51,6 +45,7 @@ if(isset($_GET['hapus'])){
     $conn = null;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,6 +126,7 @@ if(isset($_GET['hapus'])){
         
     </table>
 
+    <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
