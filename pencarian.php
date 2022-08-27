@@ -10,13 +10,12 @@ if(isset($_POST['cari']))
         $stmt = $con->prepare("SELECT * from tb_ppks where NIK like '%$search%'");
         $stmt->execute();
         $calonppks_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        //print_r($employee_details);
-         
+        echo "<script>swal ('Hore!', 'Data ditemukan!', 'success');</script>";
     }
     else
     {
         $searchErr = "NIK tidak tersedia";
-        echo "<script>alert('NIK tidak tersedia')</script>";
+        echo "<script>swal ('Yahh!', 'NIK tidak ditemukan!', 'warning');</script>";
     }
     
 }
@@ -29,7 +28,22 @@ if(isset($_GET['hapus'])){
         $sql = "DELETE FROM tb_ppks WHERE NIK = $NIK";
 
         $conn->exec($sql);
-        echo "<script>alert('data berhasil dihapus')</script>";
+        echo "<script>swal({
+            title: 'Apa Anda Yakin?',
+            text: 'Data yang telah dihapus tidak dapat dikembalikan!',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal('Hore! Data telah terhapus!', {
+                icon: 'success',
+              });
+            } else {
+              swal('Data aman tidak dihapus!');
+            }
+          });</script>";
         header("location: pencarian.php");
     } catch (PDOException $e){
         echo $sql . "<br>" . $e->getMessage();
@@ -54,7 +68,7 @@ if(isset($_GET['hapus'])){
                     <li><a href="home.html">Home</a></li>
                     <li><a href="input.php">Input</a></li>
                     <li><a href="pencarian.php" class="cari">Pencarian</a></li>
-                    <li><a href="index.php"class="tbl-biru">Logout</a></li>
+                    <li><a href="logout.php"class="tbl-biru">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -84,26 +98,14 @@ if(isset($_GET['hapus'])){
                 <?php
                  if(!$calonppks_details)
                  {
-                     
-                    echo "<script type='text/javascript'>
-                    setTimeout(function() {
-                        swal (
-                            tittle  : 'Warning!',
-                            text    : 'Data tidak ditemuukan!',
-                            showConfirmButton   : true
-                    )};
-                        },5);
-                        window.setTimeout(function(){
-                            window.location.replace('pencarian.php');
-                        },3000);
-                    </script>";
+                    echo "<script>swal ('Yahh!', 'Data tidak ditemukan!', 'warning')};</script>";
                  }
                  else{
                     foreach($calonppks_details as $key=>$data)
                     {
                         ?>
                     <tr style="text-align: center;">
-                        <td><a href="bukadokumen.php"><?php echo $data['NIK'];?></a></td>
+                        <td><?php echo $data['NIK'];?></a></td>
                         <td><?php echo $data['nama_lengkap'];?></td>
                         <td><?php echo $data['usia'];?></td>
                         <td><?php echo $data['jenis_kelamin'];?></td>
@@ -123,5 +125,7 @@ if(isset($_GET['hapus'])){
 
         
     </table>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

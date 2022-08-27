@@ -14,7 +14,7 @@
                     <li><a href="home.html">Home</a></li>
                     <li><a href="input.php"class="input">Input</a></li>
                     <li><a href="pencarian.php">Pencarian</a></li>
-                    <li><a href="index.php"class="tbl-biru">Logout</a></li>
+                    <li><a href="logout.php"class="tbl-biru">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -406,7 +406,7 @@
                 <tr>
                     <td class="select" style="position: relative; left: 300px;"><select name="kebutuhan_diinginkan" class="select2">
                         <option>Pilih kebutuhan</option>
-                        <option value="Pemenuhan Hidup Layak">Pemenuhan Hnameup Layak</option>
+                        <option value="Pemenuhan Hidup Layak">Pemenuhan Hidup Layak</option>
                         <option value="Perawatan Sosial/Pengasuhan">Perawatan Sosial/Pengasuhan</option>
                         <option value="Dukungan Keluarga">Dukungan Keluarga</option>
                         <option value="Terapi Fisik">Terapi Fisik</option>
