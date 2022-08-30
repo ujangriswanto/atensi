@@ -11,164 +11,37 @@ body{
     font-family: sans-serif;
 }
 
-.wrapper{
-    width: 1080px;
-    margin: auto;
-    position: relative;
+.navbar{
+    -webkit-box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
+    box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
 }
 
-.logo {
- width: 130px;
- height: 100px;
- margin-top: 5px;
- position: relative;
- left: 0px;
- top: 5px;
+.navbar .navbar-nav > .nav-item > .nav-link{
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.logo2 {
-width: 100px;
-height: 120px;
-position: relative;
-left: 10px;
-top: 15px;
+.navbar .navbar-nav > .nav-item > .nav-link:hover {
+    color: #0095f8; 
 }
 
-.menu {
-    float: right;
-    margin: 5px 5px 5px 5px;
+.navbar .navbar-nav > .nav-item.active > a {
+    color: #0095f8; 
 }
 
-nav{
-    width: 100%;
-    margin: auto;
-    display: flex;
-    line-height: 50px;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    background: #B1BCE6;
-    z-index: 1;
-    border: 2px solid #764AF1;
-}
-
-nav ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-nav ul li{
-    float: left;
-    margin-top: 35px;
-    margin-right: 20px;
-}
-
-nav ul li :hover{
-
+.judul{
     margin-top: 50px;
-    border-radius: 20px;
-    color:#764AF1;
-}
-
-.home{
-    font-family: 'Arial';
-    color: #764AF1;
-    font-size: 20px;
+    margin-bottom: 30px;
     font-weight: bold;
     text-align: center;
-    padding: 0px 16px 0px 16px;
-    text-decoration: none;
 }
 
-.input{
-    font-family: 'Arial';
-    color: #764AF1;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding: 0px 16px 0px 16px;
-    text-decoration: none;
+.form-control{
+    width: 950px;
+    border: 1px solid #0095f8;
 }
 
-.cari{
-    font-family: 'Arial';
-    color: #764AF1;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding: 0px 16px 0px 16px;
-    text-decoration: none;
-}
-
-nav ul li a{
-    font-family: 'Arial';
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding: 0px 16px 0px 16px;
-    text-decoration: none;
-}
-
-section {
-    margin: auto;
-    display: flex;
-    margin-bottom: 50px;
-}
-
-a.tbl-biru{
-    background: #764AF1;
-    border-radius: 20px;
-    margin-top: 20px;
-    padding: 15px 20px 15px 20px;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-a.tbl-biru:hover{
-    background: #2C93CD;
-    text-decoration: none;
-}
-
-.keyword{
-    width: 80px;
-    font-size: 16px;
-
-}
-
-.tabsearch{
-    position: relative;
-    left: 150px;
-}
-
-h1{
-
-    padding-top: 20px;
-}
-
-.btn-group .button {
-    background-color: transparent;
-    border: 2px solid rgb(255, 0, 0);
-    border-radius: 5px;
-    color: rgb(255, 0, 0);
-    padding: 5px 5px;
-    margin: 5px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    
-}
-  
-.btn-group .button:not(:last-child) {
-    border-right: none;
-}
-  
-.btn-group .button:hover {
-    background-color: #ff0000;
-    color: #FFFFFF;
+.btn-cari{
+    width: 150px;
 }

@@ -11,373 +11,99 @@ body{
     font-family: sans-serif;
 }
 
-.wrapper{
-    width: 1080px;
-    margin: auto;
-    position: relative;
+.navbar{
+    -webkit-box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
+    box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
 }
 
-.logo {
- width: 130px;
- height: 100px;
- margin-top: 5px;
- position: relative;
- left: 0px;
- top: 5px;
+.navbar .navbar-nav > .nav-item > .nav-link{
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.logo2 {
-width: 100px;
-height: 120px;
-position: relative;
-left: 10px;
-top: 15px;
+.navbar .navbar-nav > .nav-item > .nav-link:hover {
+    color: #0095f8; 
 }
 
-.menu {
-    float: right;
-    margin: 5px 5px 5px 5px;
+.navbar .navbar-nav > .nav-item.active > a {
+    color: #0095f8; 
 }
-
-nav{
-    width: 100%;
-    margin: auto;
-    display: flex;
-    line-height: 50px;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    background: #B1BCE6;
-    z-index: 1;
-    border: 2px solid #764AF1;
-}
-
-nav ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-nav ul li{
-    float: left;
-    margin-top: 35px;
-    margin-right: 20px;
-}
-
-nav ul li :hover{
-
-    margin-top: 50px;
-    border-radius: 20px;
-    color:#764AF1;
-}
-
-.home{
-    font-family: 'Arial';
-    color: #764AF1;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding: 0px 16px 0px 16px;
-    text-decoration: none;
-}
-
-.input{
-    font-family: 'Arial';
-    color: #764AF1;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding: 0px 16px 0px 16px;
-    text-decoration: none;
-}
-
-.cari{
-    font-family: 'Arial';
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding: 0px 16px 0px 16px;
-    text-decoration: none;
-}
-
-nav ul li a{
-    font-family: 'Arial';
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding: 0px 16px 0px 16px;
-    text-decoration: none;
-}
-
-section {
-    margin: auto;
-    display: flex;
-    margin-bottom: 50px;
-}
-
-a.tbl-biru{
-    background: #764AF1;
-    border-radius: 20px;
+.judul{
     margin-top: 20px;
-    padding: 15px 20px 15px 20px;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-weight: bold;
 }
 
-a.tbl-biru:hover{
-    background: #2C93CD;
-    text-decoration: none;
+.card-form{
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
+    box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
 }
 
-.regform{
-    margin: auto;
-    width: 800px;
-    background-color: #764AF1;
-    color: #FFFFFF;
-    padding: 10px,0px,10px,0px;
-    text-align: center;
-    border-radius: 15px 15px 0px 0px;
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
 }
-
-.main1{
-    background-color: rgba(0,0,0,0.2);
-    width: 800px;
-    margin: auto;
-    padding: 30px;
-}
-
-form{
-    padding: 10px;
-}
-
-.main2{
-    background-color: rgba(0,0,0,0.2);
-    width: 800px;
-    margin: auto;
-    padding: 30px;
-}
-
-form{
-    padding: 10px;
-}
-
-.main3{
-    background-color: rgba(0,0,0,0.2);
-    width: 800px;
-    margin: auto;
-    padding: 30px;
-}
-
-form{
-    padding: 10px;
-}
-
-.main4{
-    background-color: rgba(0,0,0,0.2);
-    width: 800px;
-    margin: auto;
-    padding: 30px;
-}
-
-form{
-    padding: 10px;
-}
-
-.main5{
-    background-color: rgba(0,0,0,0.2);
-    width: 800px;
-    margin: auto;
-    padding: 30px;
-}
-
-form{
-    padding: 10px;
-}
-
-.nama{
-    margin-left: 25px;
-    margin-top: 30px;
-    width: 150px;
-    font-size: 18px;
-    padding: 8px;
-}
-
-.nama2{
-    position: relative;
-    left: 350px;
-    top: -20px;
-    width: 125px;
-    font-size: 18px;
-}
-
-.field{
-    position: relative;
-    left: 100px;
-    top: 4px;
-    width: 380px;
-    line-height: 20px;
-    border-radius: 6px;
-    padding: 0, 22px;
-    font-size: 16px;
-}
-
-.option{
-    position: relative;
-    left: 100px;
-    top: 4px;
-    font-size: 16px;
-}
-
-.field2{
-    position: relative;
-    left: 100px;
-    top: 4px;
-    width: 54px;
-    line-height: 20px;
-    border-radius: 6px;
-    padding: 0, 22px;
-    font-size: 16px;
-}
-
-.year{
-    position: relative;
-    left: -250px;
-    top: 4px;
-}
-
-.year2{
-    position: relative;
-    left: -230px;
-    top: 4px;
-}
-
-.ttl{
-    position: relative;
-    left: 100px;
-    top: 4px;
-}
-
-.ttl2{
-    width: 165px;
-    line-height: 20px;
-    border-radius: 6px;
-    padding: 0, 22px;
-    font-size: 16px;
-}
-
-.select{
-    position: relative;
-    left: 100px;
-    top: 4px;
-}
-
-.select2{
-    width: 165px;
-    line-height: 20px;
-    border-radius: 6px;
-    padding: 0, 22px;
-    font-size: 16px;
-}
-
-.date{
-    line-height: 20px;
-    border-radius: 6px;
-    padding: 0, 22px;
-    font-size: 16px;
-}
-
-.nk{
-    position: relative;
-    left: 80px;
-    top: 4px;
-}
-
-.jenis{
-    position: relative;
-    left: -230px;
-    top: 4px;
-}
-
-.bulan{
-    position: relative;
-    left: -245px;
-    top: 4px;
-}
-
-.checkbox{
-    position: relative;
-    left: 50px;
-    top: 4px;
-}
-
-.field3{
-    position: relative;
-    left: 60px;
-    top: -1px;
-    width: 380px;
-    line-height: 20px;
-    border-radius: 6px;
-    padding: 0, 22px;
-    font-size: 16px;
-}
-
-.field4{
-    position: relative;
-    left: 300px;
-    top: 10px;
-    width: 190px;
-    line-height: 20px;
-    border-radius: 6px;
-    padding: 0, 22px;
-    font-size: 16px;
-}
-
-.field5{
-    position: relative;
-    left: 195px;
-    top: 0px;
-    width: 190px;
-    line-height: 20px;
-    border-radius: 6px;
-    padding: 4px, 22px;
-    font-size: 16px;
-}
-
-.checkbox2{
-    position: relative;
-    left: 195px;
-    top: 2px;
-    padding: 0 -8px 0px 0px;
-}
-
-.label{
-    position: relative;
-    left: 195px;
-    font-size: 16px;
-    top: 2px;
-    padding: 4px;
-}
-
-.nama3{
-    font-style: bold;
-    font-size: 25px;
-    text-align: justify;
-}
-
-.simpan .button{
-    border: none;
-    background: #764AF1;
-    color: #FFFFFF;
-    padding: 8px;
-    text-align: center;
-    text-decoration: none;
+  
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
     display: inline-block;
-    size: 25px;
-    margin: 4px 2px;
-    transition-duration: 0.45;
+}
+  
+/* Style the submit button */
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    font-style: bold;
+    float: right;
+}
+  
+/* Floating column for labels: 25% width */
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-left: 25px;
+    margin-top: 6px;
+}
+  
+/* Floating column for inputs: 75% width */
+.col-75 {
+    float: left;
+    width: 70%;
+    margin-top: 6px;
+}
+  
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.btn-simpan{
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-bottom: 15px;
 }
