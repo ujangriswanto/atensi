@@ -1,3 +1,4 @@
+// fungsi untuk melihat pasword yang di input
 $(function() {
 	$("input[type='password'][data-eye]").each(function(i) {
 		var $this = $(this),

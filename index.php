@@ -42,6 +42,8 @@
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/sweetalert2/dist/sweetalert2.all.min.js"></script>
         <script src="login.js"></script>
+
+        <!-- fungsi untuk mengecek apakah form telah diisi atau belum -->
         <script>
             $(document).ready(function(){
                 $(".btn-login").click( function() {
