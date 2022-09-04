@@ -1,4 +1,5 @@
 <?php
+// memulai sesi
 session_start();
 ?>
 <!DOCTYPE html>
@@ -278,15 +279,17 @@ session_start();
                     <div class="col-25">
                         <label for="agama ayah">Agama Ayah</label>
                     </div>
-                    <div class="select">
-                        <select name="agama_ayah">
-                            <option>Pilih agama</option>
-                            <option value="islam">Islam</option>
-                            <option value="katolik">Katolik</option>
-                            <option value="hindu">Hindu</option>
-                            <option value="budha">Budha</option>
-                            <option value="khonghucu">Khonghucu</option>
-                        </select>
+                    <div class="col-75">
+                        <div class="select">
+                            <select name="agama_ayah">
+                                <option>Pilih agama</option>
+                                <option value="islam">Islam</option>
+                                <option value="katolik">Katolik</option>
+                                <option value="hindu">Hindu</option>
+                                <option value="budha">Budha</option>
+                                <option value="khonghucu">Khonghucu</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -588,7 +591,7 @@ session_start();
                             <option value="Tidak Ada">Tidak Ada</option>
                             <option value="Ada">Ada</option>
                         </select>
-                        <input type="number" name="jumlah_obat" placeholder="Jenis">
+                        <input type="number" name="jumlah_obat" placeholder="Jumlah" class="ml-2 mt-2">
                     </div>
                 </div>
                 <div class="row">
@@ -770,11 +773,13 @@ session_start();
     <script src="assets/popper.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+    <!-- alert ketika data berhasil ditambahkan -->
     <?php if(@$_SESSION['sukses']){ ?>
         <script>
             Swal.fire("Selamat!", "<?php echo $_SESSION['sukses']; ?>", "success")
         </script>
     <?php unset($_SESSION['sukses']);}?>
-</body>
 
+</body>
 </html>
