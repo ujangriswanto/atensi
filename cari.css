@@ -37,11 +37,45 @@ body{
     text-align: center;
 }
 
-.form-control{
-    width: 950px;
+/* style form pencarian*/
+.input-nik{
+    width: 1000px;
+    height: 38px;
     border: 1px solid #0095f8;
+    border-radius: 4px;
 }
 
 .btn-cari{
-    width: 150px;
+    width: 100px;
+}
+
+/* responsive layout */
+@media (max-width: 600px) {
+    .input-nik{
+        width: 100%;
+    }
+    .btn-cari{
+        margin-top: 15px;
+        width: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .input-nik{
+        width: 100%;
+    }
+    .btn-cari{
+        margin-top: 15px;
+        width: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .input-nik{
+        width: 100%;
+    }
+    .btn-cari{
+        margin-top: 15px;
+        width: 100px;
+    }
 }

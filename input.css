@@ -33,6 +33,7 @@ body{
     margin-top: 20px;
 }
 
+/* style wadah form*/
 .card-form{
     width: 100%;
     margin-top: 15px;
@@ -45,6 +46,7 @@ body{
     box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
 }
 
+/* style input, select dan textarea */
 input[type=text], select, textarea{
     width: 100%;
     padding: 12px;
@@ -54,13 +56,13 @@ input[type=text], select, textarea{
     resize: vertical;
 }
   
-/* Style the label to display next to the inputs */
+/* Style label*/
 label {
     padding: 12px 12px 12px 0;
     display: inline-block;
 }
   
-/* Style the submit button */
+/* Style tombol submit */
 input[type=submit] {
     background-color: #04AA6D;
     color: white;
@@ -71,7 +73,7 @@ input[type=submit] {
     float: right;
 }
   
-/* Floating column for labels: 25% width */
+/* ukuran form label */
 .col-25 {
     float: left;
     width: 25%;
@@ -79,7 +81,7 @@ input[type=submit] {
     margin-top: 6px;
 }
   
-/* Floating column for inputs: 75% width */
+/* ukuran form input */
 .col-75 {
     float: left;
     width: 70%;
@@ -93,14 +95,36 @@ input[type=submit] {
     clear: both;
 }
   
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* Responsive layout */
 @media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
+    .card-form, .col-25{
         width: 100%;
         margin-top: 0;
+        margin-bottom: 0;
+    }
+    .col-75{
+        width: 90%;
+        margin-left: 25px;
     }
 }
 
+@media screen and (max-width: 768px) {
+    .card-form, .col-25{
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .col-75{
+        width: 90%;
+        margin-left: 25px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .col-75{
+        width: 65%;
+    }
+}
 .btn-simpan{
     float: right;
     margin-top: 15px;
