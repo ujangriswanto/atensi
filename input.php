@@ -781,5 +781,10 @@ session_start();
         </script>
     <?php unset($_SESSION['sukses']);}?>
 
+    <?php if(@$_SESSION['duplikat']){ ?>
+        <script>
+            Swal.fire("Opps!", "<?php echo $_SESSION['duplikat']; ?>", "error")
+        </script>
+    <?php unset($_SESSION['duplikat']);}?>
 </body>
 </html>

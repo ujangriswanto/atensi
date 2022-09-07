@@ -5,9 +5,9 @@ include 'caridb.php';
 
 // metode untuk mencari data
 $calonppks_details='';
-if(isset($_POST['cari'])){
-    if(!empty($_POST['keyword'])){
-        $search = $_POST['keyword'];
+if(isset($_GET['keyword'])){
+    if(!empty($_GET['keyword'])){
+        $search = $_GET['keyword'];
         $stmt = $con->prepare("SELECT * from tb_ppks where NIK like '%$search%'");
         $stmt->execute();
         $calonppks_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -78,9 +78,9 @@ if(isset($_GET['hapus'])){
 
     <div class="container">
         <h1 class="judul text-center">Data PPKS</h1>
-        <form action="#" method="post" class="form-inline justify-content-center mb-3 mt-3">
+        <form action="#" method="GET" class="form-inline justify-content-center mb-3 mt-3">
             <input type="text" name="keyword" class="mr-2 input-nik" placeholder="  Masukan NIK">
-            <button type="submit" class="btn btn-cari btn-outline-primary"  name="cari" >Cari</button>
+            <button type="submit" class="btn btn-cari btn-outline-primary" name="cari" >Cari</button>
         </form>
     </div>
 
@@ -157,6 +157,11 @@ if(isset($_GET['hapus'])){
                 
                 }).then(result => {
                     if(result.isConfirmed){
+                        Swal.fire({
+                            title: "Hore!",
+                            text: 'Data berhasil dihapus',
+                            icon: 'success',
+                        })
                         window.location.href = getLink
                     }
                 })

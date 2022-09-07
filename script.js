@@ -4,8 +4,8 @@ function login_db()
     let txt_password=document.querySelector("#password").value;
 
     $.ajax({
-        type:"GET",
-        data:"",
+        type:"POST",
+        data:{"username": username,"password": password},
         url:"ambildata.php",
         success : function(result){
             var objResult=JSON.parse(result);
@@ -15,13 +15,13 @@ function login_db()
                 level_user=val.level;
                 let id_user_1=val.id_user;
                 if(txt_username==""){
-                    swal({
+                    Swal.fire({
                         title:'Kosong!',
                         text: 'Harap isi Username',
                         icon: 'warning'
                     })
                 }else if(txt_password==""){
-                    swal({
+                    Swal.fire({
                         title:'Kosong!',
                         text: 'Harap isi Password',
                         icon: 'warning'
@@ -33,7 +33,7 @@ function login_db()
                     window.location.href("home.html");
                     
                 }else{
-                    swal(
+                    Swal.fire(
                         {
                             title:"Kesalahan",
                             text: "Username atau password salah",

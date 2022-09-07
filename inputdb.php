@@ -3,6 +3,14 @@
 session_start();
 include "caridb.php";
 
+$url='localhost';
+$username='root';
+$password='';
+$conn=mysqli_connect($url,$username,$password,"db_asessmen");
+if(!$conn){
+    die("Koneksi gagal:".mysqli_connect_error());
+}
+
 // mengambil data input dari form
 if(isset($_POST['submit'])){
     $nama_lengkap = $_POST['nama_lengkap'];
@@ -104,16 +112,23 @@ if(isset($_POST['submit'])){
     } elseif ($kapan_alami_disabilitas == "Kecelakaan" && $obat_yang_dikonsumsi == "Tidak Ada") {
         $hasil = "komunitas";
     }
-    
-    // proses menyimpan data
-    try{
-        $data = "INSERT INTO tb_ppks (nama_lengkap, nama_panggilan, NIK, no_kk, jenis_kelamin, usia, tempat_lahir, tanggal_lahir, alamat, agama, anak_ke, jumlah_saudara, status_pernikahan, pekerjaan, jaminan_sosial, no_kartu, no_hp, pendidikan_terakhir, program_rehabilitasi, penyelenggara, nama_ayah, alamat_ayah, pekerjaan_ayah, penghasilan_ayah, no_hp_ayah, st_hidup_ayah, agama_ayah, nama_ibu, alamat_ibu, pekerjaan_ibu, penghasilan_ibu, no_hp_ibu, st_hidup_ibu, agama_ibu, nama_wali, alamat_wali, pekerjaan_wali, penghasilan_wali, no_hp_wali, agama_wali, hubungan_dengan_pm, nama_keluarga, alamat_keluarga, pekerjaan_keluarga, penghasilan_keluarga, no_hp_keluarga, st_hidup_keluarga, agama_keluarga, jumlah_tanggungan, jenis_disabilitas, alat_bantu, kemampuan_dasar, kapan_alami_disabilitas, penyakit_diderita, penyakit_pernah_diderita, langkah_pengobatan, obat_yang_dikonsumsi, jumlah_obat, pernah_dirawat, lama_dirawat, kecanduan_narkotika, keadaan_disabilitas, riwayat_kesehatan, bukti_gangguan, pernah_trauma, penyelamatan, medis, psikososial, kebutuhan_diinginkan, diri_sendiri, keluarga, masyarakat, kelembagaan, analisis_peksos, hasil) VALUES ('$nama_lengkap', '$nama_panggilan','$NIK','$no_kk','$jenis_kelamin','$usia','$tempat_lahir','$tanggal_lahir','$alamat','$agama','$anak_ke','$jumlah_saudara','$status_pernikahan','$pekerjaan','$jaminan_sosial','$no_kartu','$no_hp','$pendidikan_terakhir','$program_rehabilitasi','$penyelenggara', '$nama_ayah', '$alamat_ayah', '$pekerjaan_ayah', '$penghasilan_ayah', '$no_hp_ayah', '$st_hidup_ayah', '$agama_ayah', '$nama_ibu', '$alamat_ibu', '$pekerjaan_ibu', '$penghasilan_ibu', '$no_hp_ibu', '$st_hidup_ibu', '$agama_ibu', '$nama_wali', '$alamat_wali', '$pekerjaan_wali', '$penghasilan_wali', '$no_hp_wali', '$agama_wali', '$hubungan_dengan_pm', '$nama_keluarga', '$alamat_keluarga', '$pekerjaan_keluarga', '$penghasilan_keluarga', '$no_hp_keluarga', '$st_hidup_keluarga', '$agama_keluarga', '$jumlah_tanggungan', '$jenis_disabilitas', '$alat_bantu', '$kemampuan_dasar', '$kapan_alami_disabilitas', '$penyakit_diderita', '$penyakit_pernah_diderita', '$langkah_pengobatan', '$obat_yang_dikonsumsi', '$jumlah_obat', '$pernah_dirawat', '$lama_dirawat', '$kecanduan_narkotika', '$keadaan_disabilitas', '$riwayat_kesehatan', '$bukti_gangguan', '$pernah_trauma', '$penyelamatan', '$medis', '$psikososial', '$kebutuhan_diinginkan', '$diri_sendiri', '$keluarga', '$masyarakat', '$kelembagaan', '$analisis_peksos', '$hasil')";
 
-        $con->exec($data);
-        $_SESSION["sukses"] = 'Data ini masuk kedalam golongan ' . $hasil;
+    $duplicate=mysqli_query($conn,"select * from tb_ppks where NIK='$NIK' or no_kk='$no_kk'");
+    if (mysqli_num_rows($duplicate)>0){
+        $_SESSION["duplikat"] = 'NIK yang anda masukan telah ada';
         header("location: input.php");
-    }catch(PDOException $e){
-        echo $data . "<br>" . $e->getMessage();
+    }else{
+        // proses menyimpan data
+        try{
+            $data = "INSERT INTO tb_ppks (nama_lengkap, nama_panggilan, NIK, no_kk, jenis_kelamin, usia, tempat_lahir, tanggal_lahir, alamat, agama, anak_ke, jumlah_saudara, status_pernikahan, pekerjaan, jaminan_sosial, no_kartu, no_hp, pendidikan_terakhir, program_rehabilitasi, penyelenggara, nama_ayah, alamat_ayah, pekerjaan_ayah, penghasilan_ayah, no_hp_ayah, st_hidup_ayah, agama_ayah, nama_ibu, alamat_ibu, pekerjaan_ibu, penghasilan_ibu, no_hp_ibu, st_hidup_ibu, agama_ibu, nama_wali, alamat_wali, pekerjaan_wali, penghasilan_wali, no_hp_wali, agama_wali, hubungan_dengan_pm, nama_keluarga, alamat_keluarga, pekerjaan_keluarga, penghasilan_keluarga, no_hp_keluarga, st_hidup_keluarga, agama_keluarga, jumlah_tanggungan, jenis_disabilitas, alat_bantu, kemampuan_dasar, kapan_alami_disabilitas, penyakit_diderita, penyakit_pernah_diderita, langkah_pengobatan, obat_yang_dikonsumsi, jumlah_obat, pernah_dirawat, lama_dirawat, kecanduan_narkotika, keadaan_disabilitas, riwayat_kesehatan, bukti_gangguan, pernah_trauma, penyelamatan, medis, psikososial, kebutuhan_diinginkan, diri_sendiri, keluarga, masyarakat, kelembagaan, analisis_peksos, hasil) VALUES ('$nama_lengkap', '$nama_panggilan','$NIK','$no_kk','$jenis_kelamin','$usia','$tempat_lahir','$tanggal_lahir','$alamat','$agama','$anak_ke','$jumlah_saudara','$status_pernikahan','$pekerjaan','$jaminan_sosial','$no_kartu','$no_hp','$pendidikan_terakhir','$program_rehabilitasi','$penyelenggara', '$nama_ayah', '$alamat_ayah', '$pekerjaan_ayah', '$penghasilan_ayah', '$no_hp_ayah', '$st_hidup_ayah', '$agama_ayah', '$nama_ibu', '$alamat_ibu', '$pekerjaan_ibu', '$penghasilan_ibu', '$no_hp_ibu', '$st_hidup_ibu', '$agama_ibu', '$nama_wali', '$alamat_wali', '$pekerjaan_wali', '$penghasilan_wali', '$no_hp_wali', '$agama_wali', '$hubungan_dengan_pm', '$nama_keluarga', '$alamat_keluarga', '$pekerjaan_keluarga', '$penghasilan_keluarga', '$no_hp_keluarga', '$st_hidup_keluarga', '$agama_keluarga', '$jumlah_tanggungan', '$jenis_disabilitas', '$alat_bantu', '$kemampuan_dasar', '$kapan_alami_disabilitas', '$penyakit_diderita', '$penyakit_pernah_diderita', '$langkah_pengobatan', '$obat_yang_dikonsumsi', '$jumlah_obat', '$pernah_dirawat', '$lama_dirawat', '$kecanduan_narkotika', '$keadaan_disabilitas', '$riwayat_kesehatan', '$bukti_gangguan', '$pernah_trauma', '$penyelamatan', '$medis', '$psikososial', '$kebutuhan_diinginkan', '$diri_sendiri', '$keluarga', '$masyarakat', '$kelembagaan', '$analisis_peksos', '$hasil')";
+
+            $con->exec($data);
+            $_SESSION["sukses"] = 'Data ini masuk kedalam golongan ' . $hasil;
+            header("location: input.php");
+        }catch(PDOException $e){
+            $_SESSION["gagal"] = 'Data nik telah ada';
+            echo $data . "<br>" . $e->getMessage();
+        }
+        $con = null;
     }
-    $con = null;
 }

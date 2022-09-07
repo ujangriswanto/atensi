@@ -3,14 +3,11 @@ $servername='localhost';
 $username="root";
 $password="";
  
-try
-{
+try{
     $con=new PDO("mysql:host=$servername;dbname=db_asessmen",$username,$password);
     $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     //echo 'connected';
-}
-catch(PDOException $e)
-{
+}catch(PDOException $e){
     echo '<br>'.$e->getMessage();
 }
      

@@ -1,7 +1,6 @@
 <?php
 // memulai sesi
 session_start();
-
 // koneksi db
 $host = "localhost";
 $user = "root";
@@ -14,7 +13,15 @@ if (!$koneksi) {
 	die("Koneksi gagal:".mysqli_connect_error());
 }
 
-// deklarasi variabel
+// $queryResult = $connect->query("SELECT * FROM tb_user");
+//     $result=array();
+
+//     while($fetchData=$queryResult->fetch_assoc()){
+//         $result[]=$fetchData;
+//     }
+
+//     echo json_encode($result);
+// // deklarasi variabel
 $username = $_POST['username'];
 $pass = $_POST['password'];
 

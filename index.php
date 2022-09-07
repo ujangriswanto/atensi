@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +45,7 @@
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/sweetalert2/dist/sweetalert2.all.min.js"></script>
         <script src="login.js"></script>
+        <script src="script.js"></script>
 
         <!-- fungsi untuk mengecek apakah form telah diisi atau belum -->
         <script>
@@ -54,6 +58,8 @@
                         Swal.fire('Oops...', 'Username Wajib Diisi !', 'warning');
                     } else if(password.length == "") {
                         Swal.fire('Oops...', 'Password Wajib Diisi !', 'warning');
+                    } else if(username.length == "" && password.length == "") {
+                        Swal.fire('Oops...', 'Username dan Password Wajib Diisi !', 'warning');
                     } else {
                         $.ajax ({
                             url: "ambildata.php",
@@ -67,7 +73,7 @@
                                     window.location.href = "admin.php";
                                 } else if(response == "user"){
                                     window.location.href = "home.php";
-                                } else {
+                                } else{
                                     Swal.fire({
                                         title: 'Opps!',
                                         text: 'Username atau Password Anda Salah',
