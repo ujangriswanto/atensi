@@ -10,30 +10,32 @@
 </head>
 
 <body>
-    <div class="container">
+    <header class="nav-header">
         <nav class="navbar navbar-expand-md navbar-light">
-            <div class="navbar-brand">
-                <img src="Logo.png" alt="logo" class="navbar-image" style="height:  70px; height: 70px;">
-                <img src="logo2.png" alt="logo2" class="navbar-image" style="height:  70px; height: 70px;">
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="admin.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pencarian_admin.php">Pencarian</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Logout</a>
-                    </li>
-                </ul>
+            <div class="container">
+                <div class="navbar-brand">
+                    <img src="Logo.png" alt="logo" class="navbar-image" style="height:  70px; height: 70px;">
+                    <img src="logo2.png" alt="logo2" class="navbar-image" style="height:  70px; height: 70px;">
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="admin.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pencarian_admin.php">Pencarian</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Logout</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
-    </div>
+    </header>
 
     <div class="container">
         <div class="row mt-5">

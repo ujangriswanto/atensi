@@ -111,6 +111,8 @@ if(isset($_POST['submit'])){
         $hasil = "residensial";
     } elseif ($kapan_alami_disabilitas == "Kecelakaan" && $obat_yang_dikonsumsi == "Tidak Ada") {
         $hasil = "komunitas";
+    } else {
+        $hasil = "tidak diketahui";
     }
 
     $duplicate=mysqli_query($conn,"select * from tb_ppks where NIK='$NIK' or no_kk='$no_kk'");
@@ -126,7 +128,6 @@ if(isset($_POST['submit'])){
             $_SESSION["sukses"] = 'Data ini masuk kedalam golongan ' . $hasil;
             header("location: input.php");
         }catch(PDOException $e){
-            $_SESSION["gagal"] = 'Data nik telah ada';
             echo $data . "<br>" . $e->getMessage();
         }
         $con = null;
